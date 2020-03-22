@@ -30,6 +30,7 @@ dependencies {
     compile("org.slf4j:slf4j-api:1.7.30")
     compile("org.jetbrains:annotations:19.0.0")
     compile("com.fasterxml.jackson.core:jackson-databind:2.10.2")
+    compile("org.threeten:threetenbp:1.4.2")
 }
 
 file("confidential.properties").takeIf(File::exists)?.let {
