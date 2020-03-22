@@ -24,7 +24,7 @@ import java.util.concurrent.ConcurrentHashMap;
 
 class Crypto {
     private static final String DEFAULT_SSL_PROTOCOL = "TLSv1.2";
-    private static final String HMAC_SHA_256 = "PBKDF2withHmacSHA1";
+    private static final String HMAC_SHA_256 = "HmacSHA256";
     private static final String PBKDF2_ALGORITHM = "PBKDF2withHmacSHA1";
 
     private static final Base64.Encoder encoder = Base64.getEncoder();
