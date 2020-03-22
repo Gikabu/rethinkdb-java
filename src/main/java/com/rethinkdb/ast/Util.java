@@ -85,8 +85,6 @@ public class Util {
         }
 
         final DateTimeFormatter fmt = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSSX");
-        
-        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
 
         if (val instanceof LocalDateTime) {
             ZoneId zid = ZoneId.systemDefault();
