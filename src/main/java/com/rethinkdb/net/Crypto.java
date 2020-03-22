@@ -101,7 +101,7 @@ class Crypto {
         }
         final PBEKeySpec spec = new PBEKeySpec(
             new String(password, StandardCharsets.UTF_8).toCharArray(),
-            salt, iterationCount, 256
+            salt, iterationCount, 160
         );
         final SecretKeyFactory skf;
         try {
