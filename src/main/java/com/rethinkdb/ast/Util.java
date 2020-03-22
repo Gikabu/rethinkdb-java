@@ -9,11 +9,11 @@ import com.rethinkdb.model.MapObject;
 import com.rethinkdb.model.ReqlLambda;
 
 import java.lang.reflect.Array;
-import java.time.LocalDateTime;
-import java.time.OffsetDateTime;
-import java.time.ZoneId;
-import java.time.ZonedDateTime;
-import java.time.format.DateTimeFormatter;
+import org.threeten.bp.LocalDateTime;
+import org.threeten.bp.OffsetDateTime;
+import org.threeten.bp.ZoneId;
+import org.threeten.bp.ZonedDateTime;
+import org.threeten.bp.format.DateTimeFormatter;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
@@ -85,6 +85,8 @@ public class Util {
         }
 
         final DateTimeFormatter fmt = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSSX");
+        
+        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
 
         if (val instanceof LocalDateTime) {
             ZoneId zid = ZoneId.systemDefault();
