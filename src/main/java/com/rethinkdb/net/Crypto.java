@@ -1,6 +1,7 @@
 package com.rethinkdb.net;
 
 import com.rethinkdb.gen.exc.ReqlDriverError;
+import com.rethinkdb.net.Base64;
 import org.jetbrains.annotations.Nullable;
 
 import javax.crypto.Mac;
@@ -18,7 +19,6 @@ import java.security.cert.CertificateFactory;
 import java.security.cert.X509Certificate;
 import java.security.spec.InvalidKeySpecException;
 import java.util.Arrays;
-import java.util.Base64;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
