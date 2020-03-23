@@ -3,6 +3,9 @@ package com.rethinkdb.net;
 import com.rethinkdb.gen.exc.ReqlDriverError;
 import com.rethinkdb.net.Base64;
 import org.jetbrains.annotations.Nullable;
+import org.spongycastle.crypto.generators.PKCS5S2ParametersGenerator;
+import org.spongycastle.crypto.digests.SHA256Digest;
+import org.spongycastle.crypto.params.KeyParameter;
 
 import javax.crypto.Mac;
 import javax.crypto.SecretKeyFactory;
@@ -99,15 +102,17 @@ class Crypto {
         if (cachedValue != null) {
             return cachedValue;
         }
-        final PBEKeySpec spec = new PBEKeySpec(new String(password, StandardCharsets.UTF_8).toCharArray(),
-            salt, iterationCount, 128);
+//         final PBEKeySpec spec = new PBEKeySpec(new String(password, StandardCharsets.UTF_8).toCharArray(),
+//             salt, iterationCount, 128);
         
-        final SecretKeyFactory skf;
+//         final SecretKeyFactory skf;
         try {
-            skf = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA1");
-            final byte[] calculatedValue = skf.generateSecret(spec).getEncoded();
+            PKCS5S2ParametersGenerator gen = new PKCS5S2ParametersGenerator(new SHA256Digest());
+            gen.init("password".getBytes("UTF-8"), "salt".getBytes(), 4096);
+            final byte[] calculatedValue = = ((KeyParameter) gen.generateDerivedParameters(256)).getKey();
             setCache(password, salt, iterationCount, calculatedValue);
             return calculatedValue;
+            
         } catch (NoSuchAlgorithmException | InvalidKeySpecException e) {
             throw new ReqlDriverError(e);
         }
