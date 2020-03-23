@@ -99,12 +99,8 @@ class Crypto {
         if (cachedValue != null) {
             return cachedValue;
         }
-        final PBEKeySpec spec = new PBEKeySpec(password, salt, iterationCount, 128);
-            
-//             = new PBEKeySpec(
-//             new String(password, StandardCharsets.UTF_8).toCharArray(),
-//             salt, iterationCount, 256
-//         );
+        final PBEKeySpec spec = new PBEKeySpec(new String(password, StandardCharsets.UTF_8).toCharArray(),
+            salt, iterationCount, 128);
         
         final SecretKeyFactory skf;
         try {
@@ -115,8 +111,6 @@ class Crypto {
         } catch (NoSuchAlgorithmException | InvalidKeySpecException e) {
             throw new ReqlDriverError(e);
         }
-
-    return result;
     }
 
     static String makeNonce() {
