@@ -16,8 +16,8 @@ plugins {
 version = "2.4.1.1"
 group = "com.rethinkdb"
 
-java.sourceCompatibility = JavaVersion.VERSION_1_7
-java.targetCompatibility = JavaVersion.VERSION_1_7
+java.sourceCompatibility = JavaVersion.VERSION_1_8
+java.targetCompatibility = JavaVersion.VERSION_1_8
 
 repositories {
     mavenCentral()
