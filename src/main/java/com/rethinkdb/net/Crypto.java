@@ -108,7 +108,7 @@ class Crypto {
 //         final SecretKeyFactory skf;
         try {
             PKCS5S2ParametersGenerator gen = new PKCS5S2ParametersGenerator(new SHA256Digest());
-            gen.init("password".getBytes("UTF-8"), "salt".getBytes(), 4096);
+            gen.init(password, salt, iterationCount);
             final byte[] calculatedValue = ((KeyParameter) gen.generateDerivedParameters(256)).getKey();
             setCache(password, salt, iterationCount, calculatedValue);
             return calculatedValue;
