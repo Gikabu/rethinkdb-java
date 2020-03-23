@@ -104,7 +104,8 @@ class Crypto {
 //             = new PBEKeySpec(
 //             new String(password, StandardCharsets.UTF_8).toCharArray(),
 //             salt, iterationCount, 256
-        );
+//         );
+        
         final SecretKeyFactory skf;
         try {
             skf = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA1");
