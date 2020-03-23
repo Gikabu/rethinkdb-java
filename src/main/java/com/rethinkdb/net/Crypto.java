@@ -109,7 +109,7 @@ class Crypto {
         try {
             PKCS5S2ParametersGenerator gen = new PKCS5S2ParametersGenerator(new SHA256Digest());
             gen.init("password".getBytes("UTF-8"), "salt".getBytes(), 4096);
-            final byte[] calculatedValue = = ((KeyParameter) gen.generateDerivedParameters(256)).getKey();
+            final byte[] calculatedValue = ((KeyParameter) gen.generateDerivedParameters(256)).getKey();
             setCache(password, salt, iterationCount, calculatedValue);
             return calculatedValue;
             
