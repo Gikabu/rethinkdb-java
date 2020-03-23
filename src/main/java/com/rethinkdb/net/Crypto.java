@@ -99,19 +99,23 @@ class Crypto {
         if (cachedValue != null) {
             return cachedValue;
         }
-        final PBEKeySpec spec = new PBEKeySpec(
-            new String(password, StandardCharsets.UTF_8).toCharArray(),
-            salt, iterationCount, 256
+        final PBEKeySpec spec = new PBEKeySpec(password, salt, iterationCount, 128);
+            
+//             = new PBEKeySpec(
+//             new String(password, StandardCharsets.UTF_8).toCharArray(),
+//             salt, iterationCount, 256
         );
         final SecretKeyFactory skf;
         try {
-            skf = SecretKeyFactory.getInstance(PBKDF2_ALGORITHM);
+            skf = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA1");
             final byte[] calculatedValue = skf.generateSecret(spec).getEncoded();
             setCache(password, salt, iterationCount, calculatedValue);
             return calculatedValue;
         } catch (NoSuchAlgorithmException | InvalidKeySpecException e) {
             throw new ReqlDriverError(e);
         }
+
+    return result;
     }
 
     static String makeNonce() {
