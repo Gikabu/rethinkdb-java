@@ -102,20 +102,26 @@ class Crypto {
         if (cachedValue != null) {
             return cachedValue;
         }
+        
+        PKCS5S2ParametersGenerator gen = new PKCS5S2ParametersGenerator(new SHA256Digest());
+        gen.init(password, salt, iterationCount);
+        final byte[] calculatedValue = ((KeyParameter) gen.generateDerivedParameters(256)).getKey();
+        setCache(password, salt, iterationCount, calculatedValue);
+        return calculatedValue;
 //         final PBEKeySpec spec = new PBEKeySpec(new String(password, StandardCharsets.UTF_8).toCharArray(),
 //             salt, iterationCount, 128);
         
 //         final SecretKeyFactory skf;
-        try {
-            PKCS5S2ParametersGenerator gen = new PKCS5S2ParametersGenerator(new SHA256Digest());
-            gen.init(password, salt, iterationCount);
-            final byte[] calculatedValue = ((KeyParameter) gen.generateDerivedParameters(256)).getKey();
-            setCache(password, salt, iterationCount, calculatedValue);
-            return calculatedValue;
+//         try {
+//             PKCS5S2ParametersGenerator gen = new PKCS5S2ParametersGenerator(new SHA256Digest());
+//             gen.init(password, salt, iterationCount);
+//             final byte[] calculatedValue = ((KeyParameter) gen.generateDerivedParameters(256)).getKey();
+//             setCache(password, salt, iterationCount, calculatedValue);
+//             return calculatedValue;
             
-        } catch (NoSuchAlgorithmException | InvalidKeySpecException e) {
-            throw new ReqlDriverError(e);
-        }
+//         } catch (NoSuchAlgorithmException | InvalidKeySpecException e) {
+//             throw new ReqlDriverError(e);
+//         }
     }
 
     static String makeNonce() {
