@@ -21,9 +21,9 @@ import java.security.cert.CertificateException;
 import java.security.cert.CertificateFactory;
 import java.security.cert.X509Certificate;
 import java.security.spec.InvalidKeySpecException;
-import java.util.Arrays;
-import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
+import java8.util.Arrays;
+import java8.util.Map;
+import java8.util.concurrent.ConcurrentHashMap;
 
 class Crypto {
     private static final String DEFAULT_SSL_PROTOCOL = "TLSv1.2";
