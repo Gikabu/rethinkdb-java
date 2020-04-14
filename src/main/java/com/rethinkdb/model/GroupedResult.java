@@ -3,7 +3,7 @@ package com.rethinkdb.model;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.util.List;
+import java8.util.List;
 
 public class GroupedResult<G, V> {
     private final G group;
