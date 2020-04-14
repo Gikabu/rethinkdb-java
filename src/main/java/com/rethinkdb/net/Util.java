@@ -8,7 +8,7 @@ import com.rethinkdb.gen.exc.ReqlDriverError;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.time.OffsetDateTime;
-import java.util.*;
+import java8.util.*;
 
 public class Util {
     private static final TypeReference<Map<String, Object>> mapTypeRef = new TypeReference<Map<String, Object>>() {};
