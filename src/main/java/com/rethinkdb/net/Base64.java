@@ -6,8 +6,8 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.nio.ByteBuffer;
 import java.nio.charset.StandardCharsets;
-import java.util.Arrays;
-import java.util.Objects;
+import java8.util.Arrays;
+import java8.util.Objects;
 
 /**
  * This class consists exclusively of static methods for obtaining
