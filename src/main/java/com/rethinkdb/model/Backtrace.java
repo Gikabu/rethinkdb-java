@@ -2,7 +2,7 @@ package com.rethinkdb.model;
 
 import org.jetbrains.annotations.Nullable;
 
-import java.util.List;
+import java8.util.List;
 
 public class Backtrace {
     private List<Object> raw;
