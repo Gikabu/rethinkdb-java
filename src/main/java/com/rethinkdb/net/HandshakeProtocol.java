@@ -11,7 +11,7 @@ import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
-import java.util.Map;
+import java8.util.Map;
 
 import static com.rethinkdb.net.Crypto.*;
 import static com.rethinkdb.net.Util.readJSON;
