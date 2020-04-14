@@ -2,7 +2,7 @@ package com.rethinkdb.net;
 
 import org.jetbrains.annotations.NotNull;
 
-import java.util.concurrent.CompletableFuture;
+import java8.util.concurrent.CompletableFuture;
 
 /**
  * A pump that read {@link Response}s using {@link Response#readFromSocket(ConnectionSocket)}.
