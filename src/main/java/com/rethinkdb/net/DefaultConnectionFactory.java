@@ -16,8 +16,8 @@ import java.net.Socket;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.util.Map;
-import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.ConcurrentHashMap;
+import java8.util.concurrent.CompletableFuture;
+import java8.util.concurrent.ConcurrentHashMap;
 
 /**
  * The default {@link ConnectionSocket.Factory} and {@link ResponsePump.Factory} for any default connections.
