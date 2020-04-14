@@ -11,19 +11,19 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.io.Closeable;
-import java.util.Iterator;
-import java.util.List;
-import java.util.NoSuchElementException;
-import java.util.Objects;
-import java.util.concurrent.*;
-import java.util.concurrent.atomic.AtomicLong;
-import java.util.concurrent.atomic.AtomicReference;
-import java.util.function.BiConsumer;
-import java.util.function.Consumer;
-import java.util.stream.Collector;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
-import java.util.stream.StreamSupport;
+import java8.util.Iterator;
+import java8.util.List;
+import java8.util.NoSuchElementException;
+import java8.util.Objects;
+import java8.util.concurrent.*;
+import java8.util.concurrent.atomic.AtomicLong;
+import java8.util.concurrent.atomic.AtomicReference;
+import java8.util.function.BiConsumer;
+import java8.util.function.Consumer;
+import java8.util.stream.Collector;
+import java8.util.stream.Collectors;
+import java8.util.stream.Stream;
+import java8.util.stream.StreamSupport;
 
 /**
  * A ReQL query result.
