@@ -4,11 +4,11 @@ package com.rethinkdb.model;
 import com.rethinkdb.ast.ReqlAst;
 import com.rethinkdb.ast.Util;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-import java.util.stream.Collectors;
+import java8.util.ArrayList;
+import java8.util.Arrays;
+import java8.util.Collections;
+import java8.util.List;
+import java8.util.stream.Collectors;
 
 public class Arguments extends ArrayList<ReqlAst> {
     public Arguments() {}
