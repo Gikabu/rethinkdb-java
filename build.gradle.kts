@@ -31,7 +31,7 @@ dependencies {
     compile("org.jetbrains:annotations:19.0.0")
     compile("com.fasterxml.jackson.core:jackson-databind:2.10.2")
     compile("org.threeten:threetenbp:1.4.2")
-    compile ("net.sourceforge.streamsupport:streamsupport:1.7.2'")
+    compile ("net.sourceforge.streamsupport:streamsupport:1.7.2")
     compile("com.madgag.spongycastle:core:1.58.0.0")
 }
 
