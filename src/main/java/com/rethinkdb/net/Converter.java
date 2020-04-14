@@ -10,8 +10,8 @@ import com.rethinkdb.model.OptArgs;
 import java.time.Instant;
 import java.time.OffsetDateTime;
 import java.time.ZoneOffset;
-import java.util.*;
-import java.util.stream.Collectors;
+import java8.util.*;
+import java8.util.stream.Collectors;
 
 public class Converter {
     private static final Base64.Decoder b64decoder = Base64.getMimeDecoder();
