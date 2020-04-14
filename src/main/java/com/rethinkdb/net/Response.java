@@ -15,11 +15,11 @@ import org.slf4j.LoggerFactory;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.nio.charset.StandardCharsets;
-import java.util.Collections;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
-import java.util.stream.Collectors;
+import java8.util.Collections;
+import java8.util.List;
+import java8.util.Map;
+import java8.util.Objects;
+import java8.util.stream.Collectors;
 
 public class Response {
     private static final Logger LOGGER = LoggerFactory.getLogger(Query.class);
