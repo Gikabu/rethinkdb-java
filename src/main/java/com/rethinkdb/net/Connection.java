@@ -17,14 +17,14 @@ import javax.net.ssl.SSLContext;
 import java.io.Closeable;
 import java.io.InputStream;
 import java.net.URI;
-import java.util.Objects;
-import java.util.Set;
-import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.CompletionException;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.atomic.AtomicLong;
-import java.util.concurrent.locks.Lock;
-import java.util.concurrent.locks.ReentrantLock;
+import java8.util.Objects;
+import java8.util.Set;
+import java8.util.concurrent.CompletableFuture;
+import java8.util.concurrent.CompletionException;
+import java8.util.concurrent.ConcurrentHashMap;
+import java8.util.concurrent.atomic.AtomicLong;
+import java8.util.concurrent.locks.Lock;
+import java8.util.concurrent.locks.ReentrantLock;
 
 /**
  * A single connection to RethinkDB.
