@@ -15,7 +15,7 @@ import java.net.InetSocketAddress;
 import java.net.Socket;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
-import java.util.Map;
+import java8.util.Map;
 import java8.util.concurrent.CompletableFuture;
 import java8.util.concurrent.ConcurrentHashMap;
 
