@@ -3,7 +3,7 @@
 <%block name="add_imports">
 import com.rethinkdb.model.ReqlLambda;
 import com.rethinkdb.ast.Util;
-import java8.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.Arrays;
 import java.util.List;
 </%block>

@@ -1,6 +1,6 @@
 package com.rethinkdb.net;
 
-import java8.util.Objects;
+import java.util.Objects;
 
 import java.io.FilterOutputStream;
 import java.io.IOException;

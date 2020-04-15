@@ -17,7 +17,7 @@
     }
 </%block>
 <%block name="special_methods">\
-    public static MakeObj fromMap(java8.util.Map<String, ReqlAst> map){
+    public static MakeObj fromMap(java.util.Map<String, ReqlAst> map){
         return new MakeObj(OptArgs.fromMap(map));
     }
 </%block>

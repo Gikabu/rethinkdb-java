@@ -10,6 +10,8 @@ import com.rethinkdb.gen.proto.ResponseType;
 import com.rethinkdb.model.Arguments;
 import com.rethinkdb.model.OptArgs;
 import com.rethinkdb.model.Server;
+import java8.util.concurrent.CompletableFuture;
+import java8.util.concurrent.CompletionException;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -19,8 +21,6 @@ import java.io.InputStream;
 import java.net.URI;
 import java.util.Objects;
 import java.util.Set;
-import java8.util.concurrent.CompletableFuture;
-import java8.util.concurrent.CompletionException;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.locks.Lock;

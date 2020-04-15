@@ -10,8 +10,8 @@ import com.rethinkdb.ast.Util;
 import com.rethinkdb.gen.exc.ReqlDriverError;
 
 import java.util.Arrays;
-import java8.util.ArrayList;
-import java8.util.Collections;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class TopLevel {

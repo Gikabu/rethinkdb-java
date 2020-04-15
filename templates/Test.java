@@ -18,19 +18,19 @@ import org.junit.*;
 import org.junit.rules.ExpectedException;
 
 import java.util.Arrays;
-import java8.util.ArrayList;
+import java.util.ArrayList;
 import java.util.List;
-import java8.util.Map;
-import java8.util.Set;
+import java.util.Map;
+import java.util.Set;
 import java.time.OffsetDateTime;
 import java.time.ZoneOffset;
 import java.time.Instant;
-import java8.util.stream.LongStream;
-import java8.util.stream.Collectors;
-import java8.util.stream.Stream;
-import java8.util.concurrent.TimeoutException;
-import java8.util.regex.Pattern;
-import java8.util.Collections;
+import java.util.stream.LongStream;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+import java.util.concurrent.TimeoutException;
+import java.util.regex.Pattern;
+import java.util.Collections;
 import java.nio.charset.StandardCharsets;
 
 import static com.rethinkdb.TestingCommon.*;

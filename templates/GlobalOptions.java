@@ -1,6 +1,6 @@
 package com.rethinkdb.gen.model;
 
-import java8.util.*;
+import java.util.*;
 import com.rethinkdb.model.*;
 import com.rethinkdb.gen.ast.*;
 

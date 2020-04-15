@@ -6,9 +6,9 @@ import com.jfrog.bintray.gradle.tasks.RecordingCopyTask
 
 
 plugins {
-    java
     maven
     `maven-publish`
+    java
     signing
     id("com.jfrog.bintray") version "1.8.4"
 }
@@ -20,14 +20,15 @@ java.sourceCompatibility = JavaVersion.VERSION_1_8
 java.targetCompatibility = JavaVersion.VERSION_1_8
 
 repositories {
-    jcenter()
-    maven {
-        setUrl("https://jitpack.io")
-    }
+    mavenCentral()
 }
 
 dependencies {
     compile("net.sourceforge.streamsupport:streamsupport:1.7.2")
+    compile("net.sourceforge.streamsupport:streamsupport-cfuture:1.7.2")
+    compile("net.sourceforge.streamsupport:streamsupport-atomic:1.7.2")
+    compile("net.sourceforge.streamsupport:streamsupport-flow:1.7.2")
+    compile("net.sourceforge.streamsupport:streamsupport-literal:1.6.0")
     testCompile("junit:junit:4.12")
     testCompile("net.jodah:concurrentunit:0.4.6")
     testRuntime("ch.qos.logback:logback-classic:1.2.3")

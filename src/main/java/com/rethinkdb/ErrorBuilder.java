@@ -8,7 +8,7 @@ import com.rethinkdb.gen.proto.ResponseType;
 import com.rethinkdb.model.Backtrace;
 import org.jetbrains.annotations.Nullable;
 
-import java8.util.function.Function;
+import java.util.function.Function;
 
 public class ErrorBuilder {
     private final String msg;

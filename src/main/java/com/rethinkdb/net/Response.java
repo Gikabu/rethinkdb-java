@@ -8,7 +8,6 @@ import com.rethinkdb.gen.proto.ResponseNote;
 import com.rethinkdb.gen.proto.ResponseType;
 import com.rethinkdb.model.Backtrace;
 import com.rethinkdb.model.Profile;
-import java8.util.Objects;
 import org.jetbrains.annotations.Nullable;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -19,6 +18,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 public class Response {
