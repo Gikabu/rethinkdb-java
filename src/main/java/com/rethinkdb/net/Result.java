@@ -7,35 +7,53 @@ import com.rethinkdb.gen.exc.ReqlError;
 import com.rethinkdb.gen.exc.ReqlRuntimeError;
 import com.rethinkdb.gen.proto.ResponseType;
 import com.rethinkdb.model.Profile;
+import java8.lang.Iterables;
 import java8.util.concurrent.CompletableFuture;
+import java8.util.concurrent.CompletionException;
+import java8.util.function.BiConsumer;
+import java8.util.stream.Collector;
+import java8.util.stream.Collectors;
+import java8.util.stream.Stream;
+import java8.util.stream.StreamSupport;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.io.Closeable;
-import java.util.Iterator;
-import java.util.List;
-import java.util.NoSuchElementException;
-import java.util.Objects;
+import java.util.*;
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.function.BiConsumer;
-import java.util.function.Consumer;
-import java.util.stream.Collector;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
-import java.util.stream.StreamSupport;
 
 /**
  * A ReQL query result.
  *
  * @param <T> the type of the result.
  */
-public class Result<T> implements Iterator<T>, Iterable<T>, Closeable {
+public class Result<T> implements Iterator<T>, Iterable<T>, Spliterator<T>, Closeable {
     /**
      * The object which represents {@code null} inside the BlockingQueue.
      */
     private static final Object NIL = new Object();
+
+    @Override
+    public boolean tryAdvance(java.util.function.Consumer<? super T> consumer) {
+        return false;
+    }
+
+    @Override
+    public Spliterator<T> trySplit() {
+        return null;
+    }
+
+    @Override
+    public long estimateSize() {
+        return 0;
+    }
+
+    @Override
+    public int characteristics() {
+        return 0;
+    }
 
     /**
      * The fetch mode to use on partial sequences.
@@ -194,7 +212,7 @@ public class Result<T> implements Iterator<T>, Iterable<T>, Closeable {
     public @NotNull Stream<T> stream() {
         fetchMode = FetchMode.AGGRESSIVE;
         onStateUpdate();
-        return StreamSupport.stream(spliterator(), false).onClose(this::close);
+        return StreamSupport.stream(Iterables.spliterator(this), false).onClose(this::close);
     }
 
     /**
@@ -208,7 +226,7 @@ public class Result<T> implements Iterator<T>, Iterable<T>, Closeable {
     public @NotNull Stream<T> parallelStream() {
         fetchMode = FetchMode.AGGRESSIVE;
         onStateUpdate();
-        return StreamSupport.stream(spliterator(), true).onClose(this::close);
+        return StreamSupport.stream(Iterables.spliterator(this), true).onClose(this::close);
     }
 
     /**
@@ -326,11 +344,8 @@ public class Result<T> implements Iterator<T>, Iterable<T>, Closeable {
         return this;
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
-    public void forEach(Consumer<? super T> action) {
+    public void forEach(java.util.function.Consumer<? super T> action) {
         try {
             Objects.requireNonNull(action);
             fetchMode = FetchMode.AGGRESSIVE;
@@ -342,11 +357,8 @@ public class Result<T> implements Iterator<T>, Iterable<T>, Closeable {
         }
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
-    public void forEachRemaining(Consumer<? super T> action) {
+    public void forEachRemaining(java.util.function.Consumer<? super T> action) {
         forEach(action);
     }
 
